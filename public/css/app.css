@@ -1,0 +1,63 @@
+ul {
+    list-style: none;
+}
+
+ul li:not(.title) {
+    margin-left: 1em;
+}
+
+.wrapper {
+    width: 75%;
+    margin: 0 auto;
+}
+
+.content {
+    height: 100vh;
+}
+
+.header {
+    border-bottom: 1px dashed teal;
+    padding-top: 20px;
+    font-size: 20px;
+    color: teal;
+    text-align: center;
+}
+
+.instructions {
+    border-right: 1px dashed teal;
+    border-bottom: 1px dashed teal;
+    height: 100%;
+}
+
+.template {
+    margin-top: 1em;
+    padding: 1em;
+    float: left;
+    width: 50%;
+}
+
+.preview {
+    margin-top: 3.5em;
+    padding: 1em;
+    float: right;
+    width: 50%;
+    border: 1px solid black;
+    max-height: 500px;
+}
+
+.preview img {
+    max-height: 470px;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+}
+
+.preview span.measurement {
+    position:absolute;
+}
+
+.details {
+    font-size:75%;
+    font-style: italic;
+    color: #a5a5a5;
+}

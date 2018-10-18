@@ -1,0 +1,43 @@
+{% extends 'layouts/app.twig' %}
+
+{% block title %}Berserkers | Home{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="grid-x grid-margin x">
+        <div class="cell large-12 header">
+            Image Generator
+        </div>
+    </div>
+    <div class="grid-x grid-margin x content">
+        <div class="cell large-2 instructions">
+            <ul>
+                <li class="title"><b>Instruction: </b></li>
+                <li>1. Select an article.</li>
+                <li>2. Fill inputs.</li>
+                <li>3. Generate.</li>
+            </ul>
+        </div>
+        <div class="cell large-10">
+            <div class="row">
+                <div class="cell large-2 template">
+                    <label for="clothing">1. Select Article</label>
+                    <select name="clothing" id="clothing">
+                        <option value="">Select</option>
+                        <option value="longsleeve">Long Sleeve</option>
+                        <option value="tshirt">T-Shirt</option>
+                        <option value="shoe">Shoe</option>
+                        <option value="pants">Pants</option>
+                    </select>
+                    <div class="measurements">
+                        Please select an article.
+                    </div>
+                </div>
+                <div class="cell large-10 preview">
+                    <img src="{{ baseUrl }}/img/placeholder.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

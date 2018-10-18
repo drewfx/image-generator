@@ -1,0 +1,22 @@
+{% extends 'layouts/app.twig' %}
+
+{% block title %}Berserkers | 404{% endblock %}
+
+{% block content %}
+    <div class="row body align-items-center justify-content-center">
+        <div class="col col-lg-8 col-md-10 col-sm-12 text-center">
+            <div class="whoops">
+                <div class="whoops-icon">
+                    <i class="fas fa-beer"></i>
+                </div>
+                <div class="whoops-text">
+                    <h4>Oops...you may have had too much.</h4>
+                    <p>You navigated your longship to uncharted territory.</p>
+                    <p><small>404: not found.</small></p>
+                    <a href="{{ path_for('get.index') }}">Take me home, Meili</a>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
