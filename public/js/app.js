@@ -1,3 +1,5 @@
+$ = jQuery.noConflict();
+
 $(document).foundation();
 
 class Format {
@@ -23,7 +25,7 @@ class Image {
     change(option) {
         let src = '/img/' + option + '.jpg';
 
-        (option !== '' || Image.exists(src) === true)
+        (option !== '' && Image.exists(src) === true)
             ? this.preview.attr('src', src)
             : this.preview.attr('src', this.default);
     }
@@ -119,6 +121,7 @@ class Form {
         this.target.empty();
 
         this.html += "<form action='/create-article' method='post'>";
+        this.html += "<input type='hidden' name='type' value='" + option + "'>";
         this.body(option);
         this.html += "</form>";
 
@@ -162,11 +165,5 @@ $(function() {
     $("#clothing").change(function() {
         image.change($(this).val());
         form.create($(this).val());
-    });
-
-    $(":input").bind('keyup mouseup', function () {
-        let value = $(this).val();
-
-        console.log(value);
     });
 });

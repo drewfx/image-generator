@@ -1,18 +1,12 @@
 <?php
 
-use Slim\Http\Request;
-use Slim\Http\Response;
+use App\Controllers\ArticleController;
 
-// Routes
-
-$app->get('/', function (Request $request, Response $response) {
-    // Render index view
-    return $this->view->render($response, '/pages/index.twig');
+$app->group('/', function() {
+   $this->get('', ArticleController::class . ':index')->setName('index');
 });
 
-$app->post('/create-article', function (Request $request, Response $response) {
-    $this->logger->info("Submitted");
-
-    dump($request->getParams());
-    die;
+$app->group('/create-article', function() {
+    $this->get('', ArticleController::class . ':index')->setName('get.article');
+    $this->post('', ArticleController::class . ':post')->setName('post.article');
 });
